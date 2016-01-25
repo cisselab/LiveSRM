@@ -72,14 +72,25 @@ cd(current_directory)
 %% Plot
 figure
 scatter(ClusterCentroid(1,:),ClusterCentroid(2,:),3,'filled')
+xlabel('Position (nm)')
+ylabel('Position (nm)')
+title('Cluster Centroids')
 figure
 hist(ClusterRadius,100)
-title('ClusterRadius')
+title('Root Mean Square Cluster Radii')
+xlabel('Cluster Radius (nm)')
+ylabel('Frequency')
 figure
 hist(BurstDurations,20)
-title('BurstDurations')
+title('Burst Durations')
+xlabel('Durations (frames)')
+ylabel('Frequency')
+
 figure
 hist(BurstCounts,20)
-title('BurstCounts')
+title('Burst Sizes')
+xlabel('Number of Localizations')
+ylabel('Frequency')
+
 
 end
