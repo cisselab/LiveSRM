@@ -22,7 +22,7 @@ function varargout = LiveSRM(varargin)
 
 % Edit the above text to modify the response to help LiveSRM
 
-% Last Modified by GUIDE v2.5 20-Jan-2016 13:00:19
+% Last Modified by GUIDE v2.5 25-Jan-2016 17:11:55
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -635,3 +635,26 @@ function aggregate_data_Callback(hObject, eventdata, handles)
 
 px_size = str2num(get(handles.px_size,'String'));
 DataAggregation(handles.directory,handles.Frames,handles.Xpos,handles.Ypos,handles.ClusterIDs,px_size)
+
+
+
+function render_pixel_size_Callback(hObject, eventdata, handles)
+% hObject    handle to render_pixel_size (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of render_pixel_size as text
+%        str2double(get(hObject,'String')) returns contents of render_pixel_size as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function render_pixel_size_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to render_pixel_size (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
